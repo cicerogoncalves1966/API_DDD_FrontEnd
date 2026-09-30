@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { NoticiaService } from '../../services/noticia.service';
 
@@ -6,6 +6,7 @@ import { NoticiaService } from '../../services/noticia.service';
   selector: 'app-noticias',
   standalone: false,
   templateUrl: './noticias.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./noticias.component.scss']
 })
 
