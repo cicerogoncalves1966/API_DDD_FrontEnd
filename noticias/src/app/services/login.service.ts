@@ -19,8 +19,9 @@ export class LoginService
     debugger
 
     // Após pesquisa, encontrei a solução abaixo para executar os métodos da API, no Angular 8 e superior
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const response = await this.httpClient.post(`${this.baseURL}api/CriarTokenIdentity/`, objeto, { headers });
+    // const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const response = await this.httpClient.post(`${this.baseURL}/CriarTokenIdentity/`, objeto);
+    // const response = await this.httpClient.post(`${this.baseURL}/CriarTokenIdentity/`, objeto, { headers });
 
     return response;
   }

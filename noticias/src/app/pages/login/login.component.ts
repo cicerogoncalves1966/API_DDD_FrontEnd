@@ -22,15 +22,15 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loginForm = this.formBuilder.group(
       {
-        email: ['', [Validators.required, Validators.email]],
-        senha: ['', [Validators.required]],
+        email: ['jcicerogoncalves@gmail.com', [Validators.required, Validators.email]],
+        senha: ['F1@v1@2026', [Validators.required]],
       }
     )
   }
 
   async submitLogin()
   {
-    debugger
+    // debugger
     var dadosLogin = this.loginForm.getRawValue() as LoginModel;
     //const resposta = await this.loginService.LoginUsuario(dadosLogin);
 
@@ -39,8 +39,6 @@ export class LoginComponent implements OnInit {
         token => {
           this.autenticaService.DefineToken(token.toString());
           this.router.navigate(["/noticias"]);
-        },
-        error => {
         })
   }
 }

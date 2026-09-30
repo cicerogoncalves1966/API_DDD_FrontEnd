@@ -22,8 +22,7 @@ const serviceAutentica = [Interceptor]
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    NoticiasComponent
+    ReactiveFormsModule
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()), // Usado provideHttpCliente, porque HttpClientModule está obsoleto/depeciado

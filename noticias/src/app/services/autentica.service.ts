@@ -12,13 +12,14 @@ export class AutenticaService
 
   public DefineToken( token: string )
   {
-    debugger
     sessionStorage.setItem('token', token);
   }
 
   public ObterToken()
   {
-    sessionStorage.getItem('token');
+    debugger
+    var result = sessionStorage.getItem('token');
+    return result;
   }
 
   public LimparToken()

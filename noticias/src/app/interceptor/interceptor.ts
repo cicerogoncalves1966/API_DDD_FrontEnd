@@ -9,8 +9,8 @@ export class Interceptor implements HttpInterceptor
   constructor(private autenticaService: AutenticaService){}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    debugger
-    
+    // debugger
+
     let headers;
 
     if(req.body instanceof FormData)
@@ -25,7 +25,8 @@ export class Interceptor implements HttpInterceptor
     }
     else
     {
-      headers: new HttpHeaders()
+      debugger
+      headers = new HttpHeaders()
       .append("accept", "application/json")
       .append("Content-Type", "application/json")
       .append("Authorition", "Bearer " + this.autenticaService.ObterToken());

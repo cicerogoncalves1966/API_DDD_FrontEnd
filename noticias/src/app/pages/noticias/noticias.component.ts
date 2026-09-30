@@ -20,13 +20,10 @@ export class NoticiasComponent implements OnInit {
   }
 
   async ListarNoticias() {
-  (await this.noticiaService.ListarNoticias())
-      .subscribe(noticias => {
-        this.noticias = noticias;
-      },
-        error => {
-          this.router.navigate(["/login"]);
-        } )
+    (await this.noticiaService.ListarNoticias())
+        .subscribe(noticias => {
+          // debugger
+          this.noticias = noticias;
+        })
   }
-
 }
