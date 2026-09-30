@@ -9,21 +9,27 @@
       <div>
         <input class="input-login" placeholder="email" formControlName="email"/>
       </div>
-      <div class="text-danger" *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">
-        O e-mail é obrigatório.
-      </div>
-      <div class="text-danger" *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched">
-        Formato de e-mail inválido.
-      </div>
+      @if (loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched) {
+        <div class="text-danger">
+          O e-mail é obrigatório.
+        </div>
+      }
+      @if (loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched) {
+        <div class="text-danger">
+          Formato de e-mail inválido.
+        </div>
+      }
     </div>
 
     <div>
       <div>
         <input class="input-login" type="password" placeholder="senha" formControlName="senha"/>
       </div>
-      <div class="text-danger" *ngIf="loginForm.get('senha')?.hasError('required') && loginForm.get('senha')?.touched">
-        Senha é obrigatória.
-      </div>
+      @if (loginForm.get('senha')?.hasError('required') && loginForm.get('senha')?.touched) {
+        <div class="text-danger">
+          Senha é obrigatória.
+        </div>
+      }
     </div>
 
     <div>
